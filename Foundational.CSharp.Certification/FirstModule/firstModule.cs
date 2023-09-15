@@ -136,6 +136,38 @@ Console.WriteLine(firstName + " sold " + (widgetsSold + 7) + " widgets."); // Ou
 
 // Executar operações matemáticas
 
+// Escrever o código para realizar a adição, subtração, multiplicação e divisão com inteiros
+
+int sum = 7 + 5;
+int difference = 7 - 5;
+int product = 7 * 5;
+int quotient = 7 / 5;
+
+Console.WriteLine("Sum: " + sum);
+Console.WriteLine("Difference: " + difference);
+Console.WriteLine("Product: " + product);
+Console.WriteLine("Quotient: " + quotient);
+
+/* Sum: 12
+Difference: 2
+Product: 35
+Quotient: 1
+ */
+
+/*  Como você pode ver:
+
++ é o operador de adição
+- é o operador de subtração
+* é o operador de multiplicação
+/ é o operador de divisão
+ */
+
+// Adicionar o código para realizar uma divisão usando dados decimais literais
+
+decimal decimalQuotient = 7.0m / 5;
+Console.WriteLine($"Decimal quotient: {decimalQuotient}"); // 1.4
+
+
 
 
 
