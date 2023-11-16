@@ -168,6 +168,63 @@ decimal decimalQuotient = 7.0m / 5;
 Console.WriteLine($"Decimal quotient: {decimalQuotient}"); // 1.4
 
 
+// Incrementar e decrementar
+
+int value = 0;     // value is now 0.
+value = value + 5; // value is now 5.
+value += 5;        // value is now 10.
+
+int value = 0;     // value is now 0.
+value = value + 1; // value is now 1.
+value++;           // value is now 2.
+
+/* Operadores como +=, -=, *=, ++ e -- são conhecidos como operadores de 
+atribuição composta porque compõem uma operação além de atribuir o resultado à variável. 
+O operador += é chamado especificamente de operador de atribuição de adição. */
+
+int value = 1;
+
+value = value + 1;
+Console.WriteLine("First increment: " + value);
+
+value += 1;
+Console.WriteLine("Second increment: " + value);
+
+value++;
+Console.WriteLine("Third increment: " + value);
+
+value = value - 1;
+Console.WriteLine("First decrement: " + value);
+
+value -= 1;
+Console.WriteLine("Second decrement: " + value);
+
+value--;
+Console.WriteLine("Third decrement: " + value);
+
+
+// First increment: 2
+// Second increment: 3
+// Third increment: 4
+// First decrement: 3
+// Second decrement: 2
+// Third decrement: 1
+
+// Usar o operador de incremento antes e depois do valor
+
+int value = 1; // atribui
+value++; // incrementa
+Console.WriteLine("First: " + value); // 2
+Console.WriteLine($"Second: {value++}"); // recupera o valor e atribui a variavel o inccremento - 2
+Console.WriteLine("Third: " + value); // recupera o valor - 3
+Console.WriteLine("Fourth: " + (++value)); // incrementa, primeiro, e recupera o valor incrementado - 4
+
+// First: 2
+// Second: 2
+// Third: 3
+// Fourth: 4
+
+
 
 
 
