@@ -353,11 +353,148 @@ Course              Grade   Credit Hours
 English 101         4       3
 Algebra 101         3       3
 Biology 101         3       4
+
 Computer Science I  3       4
 Psychology 101      4       3
 
 Final GPA:          3.35
 
+// Exercício – Criar lógica de decisão com instruções if
 
+Random dice = new Random();
+
+int roll1 = dice.Next(1, 7);
+int roll2 = dice.Next(1, 7);
+int roll3 = dice.Next(1, 7);
+
+int total = roll1 + roll2 + roll3;
+
+Console.WriteLine($"Dice roll: {roll1} + {roll2} + {roll3} = {total}");
+
+if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
+{
+    Console.WriteLine("You rolled doubles! +2 bonus to total!");
+    total += 2;
+}
+
+if ((roll1 == roll2) && (roll2 == roll3)) 
+{
+    Console.WriteLine("You rolled triples! +6 bonus to total!");
+    total += 6;
+}
+
+if (total >= 15)
+{
+    Console.WriteLine("You win!");
+}
+
+if (total < 15)
+{
+    Console.WriteLine("Sorry, you lose.");
+}
+
+// Output
+Dice roll: 3 + 6 + 1 = 10
+Sorry, you lose.
+
+// Output
+Dice roll: 1 + 4 + 4 = 9
+You rolled doubles! +2 bonus to total!
+Sorry, you lose.
+
+// Output
+Dice roll: 5 + 6 + 4 = 15
+You win!
+
+// Output
+Dice roll: 6 + 6 + 6 = 18
+You rolled doubles! +2 bonus to total!
+You rolled triples! +6 bonus to total!
+You win!
+
+/* Use uma instrução if para ramificar sua lógica de código. A instrução de decisão if executará o código em seu bloco de código se sua expressão booliana for verdadeira. Caso contrário, o runtime ignorará o bloco de código e continuará para a próxima linha de código após o bloco de código.
+Uma expressão booliana é qualquer expressão que retorna um valor booliano.
+Os operadores boolianos comparam os dois valores, à esquerda e à direita, em termos de igualdade, comparação e muito mais.
+Um bloco de código é definido por chaves { }. Ele coleta linhas de código que devem ser tratadas como uma única unidade.
+O operador lógico AND && agrega duas expressões de forma que as duas subexpressões devam ser verdadeiras para que toda a expressão seja verdadeira.
+O operador lógico OR || agrega duas expressões de forma que, se alguma das subexpressões for verdadeira, toda a expressão será verdadeira.
+ */
+
+ Random dice = new Random();
+
+int roll1 = dice.Next(1, 7);
+int roll2 = dice.Next(1, 7);
+int roll3 = dice.Next(1, 7);
+
+int total = roll1 + roll2 + roll3;
+
+Console.WriteLine($"Dice roll: {roll1} + {roll2} + {roll3} = {total}");
+
+if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3))
+{
+    if ((roll1 == roll2) && (roll2 == roll3))
+    {
+        Console.WriteLine("You rolled triples!  +6 bonus to total!");
+        total += 6;
+    }
+    else
+    {
+        Console.WriteLine("You rolled doubles!  +2 bonus to total!");
+        total += 2;
+    }
+}
+
+if (total >= 16)
+{
+    Console.WriteLine("You win a new car!");
+}
+else if (total >= 10)
+{
+    Console.WriteLine("You win a new laptop!");
+}
+else if (total == 7)
+{
+    Console.WriteLine("You win a trip for two!");
+}
+else
+{
+    Console.WriteLine("You win a kitten!");
+}
+
+// As instruções if, else if e else permitem criar várias condições exclusivas como expressões boolianas. Em outras palavras, quando quiser que apenas um resultado aconteça, mas tiver várias condições e resultados possíveis, use quantas instruções else if você quiser. Se as instruções if e else if não se aplicarem, o bloco de código else final será executado. O else é opcional, mas deve ficar por último se você optar por incluí-lo.
+
+/* A combinação de instruções if e else permite testar uma condição e executar um dos dois resultados possíveis. O bloco de código de if será executado quando a expressão booliana for true, e o bloco de código de else será executado quando a expressão booliana for false.
+Você pode aninhar instruções if para restringir uma condição possível. No entanto, considere o uso das instruções if, else if e else.
+Use instruções else if para criar várias condições exclusivas.
+O else é opcional, mas deve sempre ficar por último quando utilizado. */
+
+// Desafio Subscription
+Random random = new Random();
+int daysUntilExpiration = random.Next(12);
+int discountPercentage = 0;
+
+if (daysUntilExpiration == 0)
+{
+    Console.WriteLine("Your subscription has expired.");
+}
+else if (daysUntilExpiration == 1)
+{
+    Console.WriteLine("Your subscription expires within a day!");
+    discountPercentage = 20;
+}
+else if (daysUntilExpiration <= 5)
+{
+    Console.WriteLine($"Your subscription expires in {daysUntilExpiration} days.");
+    discountPercentage = 10;
+}
+else if (daysUntilExpiration <= 10)
+{
+    Console.WriteLine("Your subscription will expire soon. Renew now!");
+}
+
+if (discountPercentage > 0)
+{
+    Console.WriteLine($"Renew now and save {discountPercentage}%.");
+}
 
 
