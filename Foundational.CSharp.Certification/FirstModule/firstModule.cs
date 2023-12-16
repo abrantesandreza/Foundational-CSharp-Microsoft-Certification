@@ -497,4 +497,279 @@ if (discountPercentage > 0)
     Console.WriteLine($"Renew now and save {discountPercentage}%.");
 }
 
+// Array Basics
+
+// declarar
+string[] fraudulentOrderIDs = new string[3];
+
+/* O operador new cria uma instância de uma matriz na memória do computador que pode conter três valores de cadeia de caracteres. Para saber mais sobre a palavra-chave new, confira o módulo "Chamar métodos da Biblioteca de Classes .NET usando C#".
+
+Observe que o primeiro conjunto de colchetes [] simplesmente indica ao compilador que a variável de nome fraudulentOrderIDs é uma matriz. Já o segundo conjunto de colchetes [3] indica o número de elementos que a matriz conterá.
+ */
+
+// Atribuindo valores
+string[] fraudulentOrderIDs = new string[3];
+
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+
+/* Observe que você usa o nome da matriz para acessar os elementos dela. Cada elemento é acessado individualmente, especificando dentro dos colchetes o número do índice, que começa no zero.
+
+Como sua matriz é declarada como uma matriz de cadeia de caracteres, os valores atribuídos aos elementos da matriz devem ser cadeias de caracteres. Nesse cenário, você está atribuindo IDs de pedido aos elementos da matriz. */
+
+
+// Tentando acessar um indice fora dos limites da array
+string[] fraudulentOrderIDs = new string[3];
+
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+fraudulentOrderIDs[3] = "D000";
+
+// Output
+Build succeeded.        
+    0 Warning(s)        
+    0 Error(s)
+
+/* Unhandled exception. System.IndexOutOfRangeException: Index was outside the bounds of the array.     
+   at Program.<Main>$(String[] args) in C:\Users\someuser\Desktop\CsharpProjects\TestProject\Program.cs:line 6
+ */
+
+// Recuperando valores em uma array
+string[] fraudulentOrderIDs = new string[3];
+
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+// fraudulentOrderIDs[3] = "D000";
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+// Outuput
+First: A123
+Second: B456
+Third: C789
+
+// Reatribuindo valor
+string[] fraudulentOrderIDs = new string[3];
+
+fraudulentOrderIDs[0] = "A123";
+fraudulentOrderIDs[1] = "B456";
+fraudulentOrderIDs[2] = "C789";
+// fraudulentOrderIDs[3] = "D000";
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+fraudulentOrderIDs[0] = "F000";
+
+Console.WriteLine($"Reassign First: {fraudulentOrderIDs[0]}");
+
+// Output
+First: A123
+Second: B456
+Third: C789
+Reassign First: F000
+
+// Declarar e inicializar em uma so instruçao
+string[] fraudulentOrderIDs = { "A123", "B456", "C789" };
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+fraudulentOrderIDs[0] = "F000";
+
+Console.WriteLine($"Reassign First: {fraudulentOrderIDs[0]}");
+
+// Outuput
+First: A123
+Second: B456
+Third: C789
+Reassign First: F000
+
+
+// Length
+string[] fraudulentOrderIDs = { "A123", "B456", "C789" };
+
+Console.WriteLine($"First: {fraudulentOrderIDs[0]}");
+Console.WriteLine($"Second: {fraudulentOrderIDs[1]}");
+Console.WriteLine($"Third: {fraudulentOrderIDs[2]}");
+
+fraudulentOrderIDs[0] = "F000";
+
+Console.WriteLine($"Reassign First: {fraudulentOrderIDs[0]}");
+
+Console.WriteLine($"There are {fraudulentOrderIDs.Length} fraudulent orders to process.");
+
+// Output
+First: A123
+Second: B456
+Third: C789
+Reassign First: F000
+There are 3 fraudulent orders to process.
+
+/* Uma matriz é uma variável especial que contém uma sequência de elementos de dados relacionados.
+Você deve memorizar o formato básico de uma declaração de variável de matriz.
+Acesse cada elemento de uma matriz para definir ou obter seus valores usando um índice baseado em zero dentro de colchetes.
+Se você tentar acessar um índice fora dos limites da matriz, será gerada uma exceção de runtime.
+A propriedade Length é uma maneira programática de determinar o número de elementos em uma matriz.
+ */
+
+// foreach
+string[] names = { "Rowena", "Robin", "Bao" };
+foreach (string name in names)
+{
+    Console.WriteLine(name);
+}
+
+// Output
+Rowena
+Robin
+Bao
+
+// Criar e inicializar
+int[] inventory = { 200, 450, 700, 175, 250 };
+int sum = 0;
+foreach (int items in inventory)
+{
+    sum += items;
+}
+
+Console.WriteLine($"We have {sum} items in inventory.");
+
+// Output
+We have 1775 items in inventory.
+
+/* Use a instrução foreach para iterar em cada elemento de uma matriz, executando o bloco de código associado uma vez para cada elemento da matriz.
+A instrução foreach define o valor do elemento atual na matriz como uma variável temporária, que pode ser usada no corpo do bloco de código.
+Use o operador de incremento ++ para adicionar 1 ao valor atual de uma variável.
+ */
+
+// Desafio dos pedidos fraudulentos
+string[] orderIDs = { "B123", "C234", "A345", "C15", "B177", "G3003", "C235", "B179" };
+
+foreach (string orderID in orderIDs)
+{
+    if (orderID.StartsWith("B"))
+    {
+        Console.WriteLine(orderID);
+    }
+}
+
+// Nomenclatura
+char userOption;
+
+int gameScore;
+
+float particlesPerMillion;
+
+bool processedCustomer;
+
+/* Os comentários de código explicam desnecessariamente a funcionalidade óbvia de linhas de código individuais. Eles são considerados comentários de baixa qualidade, porque apenas explicam como o C# ou os métodos da biblioteca de classes do .NET funcionam. Se os leitores não estiverem familiarizados com essas ideias, poderão pesquisar sobre elas usando o learn.microsoft.com ou o IntelliSense.
+Os comentários de código não fornecem nenhum contexto para o problema que está sendo resolvido pelo código. Eles são considerados comentários de baixa qualidade porque o leitor não obtém nenhuma informação sobre a finalidade desse código, especialmente sobre como ele se relaciona com o sistema maior.
+ */
+
+/* Use comentários de código a fim de deixar observações significativas para si mesmo sobre os problemas que cada trecho de código específico resolve.
+Não use os comentários de código para explicar como funciona o C# ou a biblioteca de classes do .NET.
+Use comentários de código ao experimentar temporariamente soluções alternativas até que você esteja pronto para confirmar a nova solução de código; nesse ponto, você poderá excluir o código antigo.
+Nunca confie em comentários. Eles podem não refletir o estado atual do código após muitas alterações e atualizações.
+ */
+
+// Espaço em branco
+/* O espaço em branco não importa para o compilador. No entanto,...
+O espaço em branco, quando usado corretamente, pode aumentar sua capacidade de ler e compreender o código.
+ */
+
+/* Cada comando completo (uma instrução) pertence a uma linha separada.
+Se uma única linha de código se tornar longa, você poderá dividi-la. No entanto, você deve evitar dividir uma única instrução arbitrariamente em várias linhas até ter um bom motivo para fazer isso.
+Use um espaço à esquerda e à direita do operador de atribuição.
+ */
+
+// Melhor espaçamento
+Random dice = new Random();
+
+int roll1 = dice.Next(1, 7);
+int roll2 = dice.Next(1, 7);
+int roll3 = dice.Next(1, 7);
+
+int total = roll1 + roll2 + roll3;
+Console.WriteLine($"Dice roll: {roll1} + {roll2} + {roll3} = {total}");
+
+if ((roll1 == roll2) || (roll2 == roll3) || (roll1 == roll3)) 
+{
+    if ((roll1 == roll2) && (roll2 == roll3)) 
+    {
+        Console.WriteLine("You rolled triples!  +6 bonus to total!");
+        total += 6; 
+    } 
+    else 
+    {
+        Console.WriteLine("You rolled doubles!  +2 bonus to total!");
+        total += 2;
+    }
+}
+
+/* Use espaço em branco criteriosamente para ajudar a melhorar a legibilidade do código.
+Use alimentações de linha para criar linhas vazias a fim de separar frases de código. Uma frase é composta por linhas de código semelhantes ou que funcionam em conjunto.
+Use alimentações de linha para separar símbolos de bloco de código para que cada símbolo fique na sua própria linha de código.
+Use a chave tab para alinhar um bloco de código com a palavra-chave com a qual ele está associado.
+Recue o código dentro de um bloco de código para mostrar a propriedade.
+ */
+
+// Desafio - Melhorar legibilidade
+
+// Codigo ruim
+string str = "The quick brown fox jumps over the lazy dog.";
+// convert the message into a char array
+char[] charMessage = str.ToCharArray();
+// Reverse the chars
+Array.Reverse(charMessage);
+int x = 0;
+// count the o's
+foreach (char i in charMessage) { if (i == 'o') { x++; } }
+// convert it back to a string
+string new_message = new String(charMessage);
+// print it out
+Console.WriteLine(new_message);
+Console.WriteLine($"'o' appears {x} times.");
+
+// Codigo legivel
+/*
+   This code reverses a message, counts the number of times 
+   a particular character appears, then prints the results
+   to the console window.
+ */
+
+string originalMessage = "The quick brown fox jumps over the lazy dog.";
+
+char[] message = originalMessage.ToCharArray();
+Array.Reverse(message);
+
+int letterCount = 0;
+
+foreach (char letter in message)
+{
+    if (letter == 'o')
+    {
+        letterCount++;
+    }
+}
+
+string newMessage = new String(message);
+
+Console.WriteLine(newMessage);
+Console.WriteLine($"'o' appears {letterCount} times.");
+
+
+
+
+
+
+
+
 
